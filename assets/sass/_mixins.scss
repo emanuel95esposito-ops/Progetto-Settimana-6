@@ -1,0 +1,18 @@
+@use "colors" as colors;
+@use "variables" as vars;
+
+@mixin card-elevata {
+  box-shadow: colors.$card-shadow;
+  transition: transform vars.$transition-fast, box-shadow vars.$transition-fast;
+
+  &:hover {
+    transform: translateY(vars.$card-hover-lift);
+    box-shadow: colors.$card-shadow-hover;
+  }
+}
+
+@mixin solo-su($bp) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}

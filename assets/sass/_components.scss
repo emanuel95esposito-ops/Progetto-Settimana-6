@@ -1,0 +1,113 @@
+@use "colors" as colors;
+@use "variables" as vars;
+
+// Pulsanti Bootstrap
+.btn-primary {
+  --bs-btn-bg: #{colors.$button-bg};
+  --bs-btn-border-color: #{colors.$button-border};
+  --bs-btn-hover-bg: #{colors.$button-hover};
+  --bs-btn-hover-border-color: #{colors.$button-hover};
+  --bs-btn-active-bg: #{colors.$button-hover};
+  --bs-btn-active-border-color: #{colors.$button-hover};
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #{colors.$brand-primary};
+  --bs-btn-border-color: #{colors.$brand-primary};
+  --bs-btn-hover-bg: #{colors.$button-bg};
+  --bs-btn-hover-border-color: #{colors.$button-border};
+  --bs-btn-active-bg: #{colors.$button-bg};
+  --bs-btn-active-border-color: #{colors.$button-border};
+}
+
+// Utility Bootstrap
+.bg-primary {
+  background-color: colors.$brand-primary !important;
+}
+
+.text-primary {
+  color: colors.$text-brand !important;
+}
+
+// Modali
+#modalLavoro {
+  .modal-content {
+    border: none;
+    border-radius: vars.$radius-base;
+    overflow: hidden;
+  }
+
+  .modal-title {
+    color: colors.$text-brand;
+    font-weight: 700;
+  }
+
+  .modal-body {
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+#contatti {
+  .modal-content {
+    border: none;
+    border-radius: vars.$radius-base;
+  }
+
+  .modal-title {
+    color: colors.$text-brand;
+    font-weight: 700;
+  }
+}
+
+#modalLavoro,
+#contatti {
+  .btn-close {
+    --bs-btn-close-focus-shadow: none;
+    border-radius: 0;
+    transition: box-shadow vars.$transition-fast;
+
+    &:hover {
+      box-shadow: 0 4px 8px -3px rgba(0, 0, 0, 0.4);
+    }
+
+    &:focus-visible {
+      outline: 2px solid colors.$brand-primary;
+      outline-offset: 3px;
+    }
+  }
+}
+
+// Badge novità
+.badge-new {
+  background-color: colors.$badge-new-bg;
+  color: colors.$badge-new-text;
+}
+
+// Carousel
+
+#carouselEvidenza {
+  max-width: 900px;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: vars.$radius-base;
+
+  .featured-image {
+    height: clamp(220px, 30vw, 360px);
+    object-fit: cover;
+  }
+
+  .featured-info {
+    background-color: var(--bs-secondary-bg);
+
+    h4 {
+      margin-bottom: 4px;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+  }
+}

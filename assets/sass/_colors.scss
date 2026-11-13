@@ -1,0 +1,37 @@
+// Colori principali
+
+$brand-primary: hsl(20, 30%, 35%);
+$brand-secondary: hsl(20, 20%, 15%);
+
+// Bottoni
+
+$button-bg: $brand-primary;
+$button-border: $brand-primary;
+$button-hover: hsl(20, 30%, 27%);
+
+// Testo
+
+$text-brand: $brand-primary;
+
+// Sfondi
+
+$navbar-bg: $brand-secondary;
+$hero-bg: $brand-primary;
+$footer-bg: $brand-secondary;
+
+// Link footer
+
+$footer-link-hover: hsl(40, 30%, 90%);
+
+// Ombre card
+
+$card-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+$card-shadow-hover: 0 10px 24px rgba(0, 0, 0, 0.12);
+
+// Tema scuro
+$dark-card-bg: #1f1f1f;
+$dark-accent: hsl(40, 30%, 90%);
+
+// Badge novità
+$badge-new-bg: #e9c995;
+$badge-new-text: $brand-secondary;

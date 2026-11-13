@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" data-bs-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -7,30 +7,373 @@
   <title>Atelier — Studio di architettura</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <script type="module" src="assets/js/script.js"></script>
 </head>
 
 <body>
 
-  <header>
-    <!-- Navbar Bootstrap (navbar-expand-md, sticky in cima) -->
+  <header id="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark">
+      <div class="container">
+
+        <a class="navbar-brand" href="#">Atelier</a>
+
+        <div class="collapse navbar-collapse order-3 order-md-0" id="navbarAtelier">
+          <ul class="navbar-nav ms-auto align-items-start align-items-md-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Studio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#servizi">Servizi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#lavori">Lavori</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contatti" data-bs-toggle="modal" data-bs-target="#contatti">Contatti</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+
+          <button type="button" id="theme-toggle" class="nav-link ms-md-2" aria-label="Cambia tema">
+            <i class="bi bi-moon" aria-hidden="true"></i>
+          </button>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAtelier"
+            aria-controls="navbarAtelier" aria-expanded="false" aria-label="Apri menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        </div>
+
+      </div>
+    </nav>
   </header>
 
-  <section id="studio">
-    <!-- Hero: titolo grande, sottotitolo, CTA. Sfondo brand. min-height 80vh -->
-  </section>
+  <main>
 
-  <section id="servizi">
-    <!-- 3 card servizi affiancate da md in su -->
-  </section>
+    <section id="studio" class="hero d-flex align-items-center justify-content-center text-center text-white">
+      <div class="container">
+        <h1 class="fw-bold mb-3">Architettura per spazi che parlano</h1>
 
-  <section id="contatti">
-    <!-- Form contatti Bootstrap, larghezza limitata e centrata -->
-  </section>
+        <p class="mb-4">
+          Progettiamo case, uffici e spazi commerciali con attenzione alla luce, ai materiali e al contesto.
+        </p>
 
-  <footer>
-    <!-- 3 colonne: Atelier+indirizzo / Link / Contatti. Copyright in fondo -->
+        <a href="#contatti" class="btn btn-link text-white text-decoration-none" data-bs-toggle="modal"
+          data-bs-target="#contatti">
+          Inizia un progetto
+        </a>
+      </div>
+    </section>
+
+    <section id="servizi" class="py-5">
+      <div class="container">
+
+        <h2 class="text-center fw-bold">I nostri servizi</h2>
+        <p class="text-center mb-5">
+          Tre aree di lavoro, una sola attenzione alla qualità.
+        </p>
+
+        <div class="row g-3">
+
+          <div class="col-12 col-md-4">
+            <div class="card service-card h-100 text-center">
+              <div class="card-body p-4">
+                <div class="service-icon mb-3">
+                  <i class="bi bi-house-door" aria-hidden="true"></i>
+                </div>
+                <h3 class="card-title h5">Progettazione residenziale</h3>
+                <p class="card-text">
+                  Case private, ville e ristrutturazioni domestiche,
+                  dal sopralluogo alla consegna delle chiavi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card service-card h-100 text-center">
+              <div class="card-body p-4">
+                <div class="service-icon mb-3">
+                  <i class="bi bi-lamp" aria-hidden="true"></i>
+                </div>
+                <h3 class="card-title h5">Interior design</h3>
+                <p class="card-text">
+                  Allestimenti d'interno per case e uffici,
+                  con materiali selezionati e arredo su misura.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card service-card h-100 text-center">
+              <div class="card-body p-4">
+                <div class="service-icon mb-3">
+                  <i class="bi bi-bricks" aria-hidden="true"></i>
+                </div>
+                <h3 class="card-title h5">Ristrutturazioni</h3>
+                <p class="card-text">
+                  Riqualificazione di spazi esistenti, gestione dei
+                  lavori e coordinamento con le imprese.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="lavori" class="py-5">
+      <div class="container">
+
+        <h2 class="text-center fw-bold mb-4">
+          I nostri lavori
+        </h2>
+
+
+        <h3 class="text-center h5 mb-3 d-none d-sm-block">Progetti in evidenza</h3>
+
+        <div id="carouselEvidenza" class="carousel slide mb-4 d-none d-sm-block" data-bs-ride="carousel"
+          data-bs-interval="5000" data-bs-pause="hover" aria-label="Progetti in evidenza">
+
+          <div id="carouselEvidenzaInner" class="carousel-inner">
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselEvidenza" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Precedente</span>
+          </button>
+
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselEvidenza" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Successivo</span>
+          </button>
+
+        </div>
+
+
+        <div class="d-flex justify-content-center mb-4">
+          <div id="filtri-lavori" class="btn-group btn-group-sm" role="group" aria-label="Filtra i lavori">
+
+            <input type="radio" class="btn-check" name="filtroLavori" id="filtroTutti" data-filter="tutti" checked>
+            <label class="btn btn-outline-primary" for="filtroTutti">
+              Tutti <span class="count"></span>
+            </label>
+
+            <input type="radio" class="btn-check" name="filtroLavori" id="filtroRes" data-filter="residenziale">
+            <label class="btn btn-outline-primary" for="filtroRes">
+              Residenziale <span class="count"></span>
+            </label>
+
+            <input type="radio" class="btn-check" name="filtroLavori" id="filtroInterior" data-filter="interior">
+            <label class="btn btn-outline-primary" for="filtroInterior">
+              Interior design <span class="count"></span>
+            </label>
+
+            <input type="radio" class="btn-check" name="filtroLavori" id="filtroComm" data-filter="commerciale">
+            <label class="btn btn-outline-primary" for="filtroComm">
+              Commerciale <span class="count"></span>
+            </label>
+
+          </div>
+        </div>
+
+        <div id="lavori-grid" class="row g-4">
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="team" class="py-5">
+      <div class="container">
+
+        <h2 class="text-center fw-bold mb-5">Il nostro team</h2>
+
+        <div class="row g-3 justify-content-center">
+
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="card team-card h-100 text-center">
+              <div class="card-body p-4">
+                <div class="team-avatar mx-auto mb-3">GR</div>
+                <h3 class="card-title h5">Giulia Rossi</h3>
+                <p class="team-role">Architetta</p>
+                <p class="card-text">
+                  Cura la progettazione degli spazi residenziali,
+                  dal concept alla realizzazione.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="card team-card h-100 text-center">
+              <div class="card-body p-4">
+                <div class="team-avatar mx-auto mb-3">MB</div>
+                <h3 class="card-title h5">Marco Bianchi</h3>
+                <p class="team-role">Interior Designer</p>
+                <p class="card-text">
+                  Progetta ambienti funzionali, valorizzando
+                  materiali, luce e arredi.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="card team-card h-100 text-center">
+              <div class="card-body p-4">
+                <div class="team-avatar mx-auto mb-3">SV</div>
+                <h3 class="card-title h5">Sara Verdi</h3>
+                <p class="team-role">Project Manager</p>
+                <p class="card-text">
+                  Coordina le fasi dei progetti e segue
+                  il rapporto con clienti e fornitori.
+                </p>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- Modali Bootstrap -->
+
+  <div class="modal fade" id="modalLavoro" tabindex="-1" aria-labelledby="modalLavoroTitolo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="modalLavoroTitolo"></h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+
+        <div class="modal-body">
+          <img id="modalLavoroImmagine" class="img-fluid rounded mb-3" alt="">
+          <p id="modalLavoroCategoria" class="text-muted"></p>
+          <p id="modalLavoroDescrizione"></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="contatti" tabindex="-1" aria-labelledby="contattiTitolo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="contattiTitolo">Contattaci</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+
+        <div class="modal-body">
+          <p>Compila il form, ti rispondiamo entro 48 ore.</p>
+
+          <form id="formContatti" novalidate>
+
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="nome" required>
+              <div class="invalid-feedback">Da compilare</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+              <div class="invalid-feedback">Inserisci un indirizzo email valido.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="tipoProgetto" class="form-label">Tipo di progetto</label>
+              <select class="form-select" id="tipoProgetto" required>
+                <option value="" selected disabled>Seleziona un progetto</option>
+                <option value="residenziale">Residenziale</option>
+                <option value="interior">Interior design</option>
+                <option value="commerciale">Commerciale</option>
+              </select>
+              <div class="invalid-feedback">Da compilare</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="messaggio" class="form-label">Messaggio</label>
+              <textarea class="form-control" id="messaggio" rows="4" minlength="20" required></textarea>
+              <div class="invalid-feedback">Inserisci un messaggio di almeno 20 caratteri.</div>
+            </div>
+
+            <div id="successoContatti" class="alert alert-success d-none" role="status"></div>
+
+            <button type="submit" class="btn btn-primary w-100">Invia</button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer id="site-footer" class="py-4">
+    <div class="container">
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-4">
+          <h3 class="h5 fw-bold">Atelier</h3>
+          <p class="mb-0">
+            Studio di architettura
+          </p>
+          <p>Via dei Pioppi 12, Milano</p>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <h3 class="h5 fw-bold">Link</h3>
+          <ul class="list-unstyled">
+            <li><a class="footer-link" href="#studio">Studio</a></li>
+            <li><a class="footer-link" href="#servizi">Servizi</a></li>
+            <li><a class="footer-link" href="#lavori">Lavori</a></li>
+            <li>
+              <a class="footer-link" href="#contatti" data-bs-toggle="modal" data-bs-target="#contatti">
+                Contatti
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <h3 class="h5 fw-bold">Contatti</h3>
+          <p class="mb-0">
+            <a class="footer-link" href="mailto:info@atelier.example">
+              info@atelier.example
+            </a>
+          </p>
+          <p>
+            <a class="footer-link" href="tel:+390200001111">
+              +39 02 0000 1111
+            </a>
+          </p>
+        </div>
+
+      </div>
+
+      <hr class="border-light opacity-25">
+
+      <p class="text-center small mb-0">
+        © 2026 Atelier — tutti i diritti riservati
+      </p>
+
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
